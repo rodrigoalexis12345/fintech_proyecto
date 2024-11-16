@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/LOGO.png" type="image/png" />
+  <!--Para poner los tipos de letra-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet" />
+  <!-- Para poner los tipos de letra -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <title>Fintech</title>
+  <style>
+    body {
+      background-color: #f1f8fa
+    }
+
+    p {
+      font-family: "Afacad Flux", sans-serif;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    li {
+      font-family: "Afacad Flux", sans-serif;
+      font-size: 1.2rem;
+
+    }
+
+    /* Estilos de la barra de navegación */
+    .custom-bg {
+      background-color: #adced7;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .nav-item {
+      font-family: "Afacad Flux", sans-serif;
+      font-weight: bold;
+    }
+
+    .navbar-link {
+      font-size: 1.1rem;
+      padding: 5px 10px;
+    }
+
+    /* Estilos de hover para los enlaces de la navbar */
+    .navbar-link:hover {
+      background-color: #4da8c4;
+      /* Cambia a tu color preferido */
+      color: #ffffff;
+      /* Cambia el color del texto si lo deseas */
+      transition: background-color 0.3s ease, color 0.3s ease;
+      /* Animación suave */
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 55px;
+    }
+
+    .fs-5 {
+      font-family: "Afacad Flux", sans-serif;
+    }
+
+    .footer-muted {
+      font-size: 1.2rem;
+      color: #666;
+      font-family: "Afacad Flux", sans-serif;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 500px;
+      /* Define la altura de las imágenes */
+      object-fit: cover;
+      /* Asegura que las imágenes se ajusten sin deformarse */
+      border-radius: 10px;
+      /* Opcional: añade bordes redondeados */
+      margin-bottom: 20px;
+      /* Espaciado inferior */
+
+    }
+  </style>
+</head>
+
+<body>
+  <header class="custom-bg border-bottom">
+    <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center">
+      <a href="/" class="d-flex align-items-center mb-2 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="img/LOGO.png" alt="Logo Observatorio de Mujeres en Fintech" class="logo-img me-2" />
+        <span class="fs-5">Observatorio de mujeres en Fintech</span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link text-dark navbar-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="proyecto.html" class="nav-link text-dark navbar-link">Proyecto</a>
+        </li>
+        <li class="nav-item">
+          <a href="datos.html" class="nav-link text-dark navbar-link">Datos</a>
+        </li>
+        <li class="nav-item">
+          <a href="eventos.html" class="nav-link text-dark navbar-link">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a href="recursos.html" class="nav-link text-dark navbar-link">Recursos</a>
+        </li>
+        <li class="nav-item">
+          <a href="noticias.html" class="nav-link text-dark navbar-link">Noticias</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Contenedor del Carrusel -->
+  <div class="carousel-container">
+    <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Primer elemento del carrusel -->
+        <div class="carousel-item active">
+          <div class="position-relative">
+            <img src="img/Eventos-calendario1.jpg" class="d-block custom-carousel-img" alt="Evento 1">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+              <h5 class="bg-dark text-white p-2 rounded">Evento de Innovación en Fintech</h5>
+              <p class="bg-dark text-white p-2 rounded">Fecha: 20 de Noviembre | Ubicación: Lima, Perú</p>
+              <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segundo elemento del carrusel -->
+        <div class="carousel-item">
+          <div class="position-relative">
+            <img src="img/Eventos-calendario2.jpg" class="d-block custom-carousel-img" alt="Evento 2">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+              <h5 class="bg-dark text-white p-2 rounded">Taller de Blockchain y Criptomonedas</h5>
+              <p class="bg-dark text-white p-2 rounded">Fecha: 5 de Diciembre | Ubicación: Arequipa, Perú</p>
+              <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tercer elemento del carrusel -->
+        <div class="carousel-item">
+          <div class="position-relative">
+            <img src="img/Eventos-calendario3.jpg" class="d-block custom-carousel-img" alt="Evento 3">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+              <h5 class="bg-dark text-white p-2 rounded">Networking para Mujeres en Fintech</h5>
+              <p class="bg-dark text-white p-2 rounded">Fecha: 15 de Enero | Ubicación: Cusco, Perú</p>
+              <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+  <!-- Fin del Carrusel -->
+
+  <!-- CSS personalizado para el carrusel -->
+  <style>
+    .carousel-container {
+      width: 100%;
+      /* Reduce el ancho del carrusel al 80% */
+      margin: 0 auto;
+      /* Centra el carrusel en la página */
+    }
+
+    .custom-carousel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fixed;
+
+      /* Asegura que la imagen salga completa en el contenedor */
+      max-height: 450px;
+      /* Controla la altura máxima del carrusel */
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      /* Fondo semitransparente para mejorar la legibilidad */
+    }
+
+    .carousel-inner .carousel-item {
+      transition: transform 1s ease;
+      /* Transición suave */
+    }
+  </style>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--texto principal terminado -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Sobre nuestros eventos</h2>
+    <img src="img/event1.jpeg" alt="Imagen sobre eventos" class="section-img">
+    <p class="text-center">
+      Nuestros eventos de <strong>Networking para Mujeres en Fintech</strong> son el espacio ideal para conectar,
+      aprender y crecer profesionalmente en un entorno inclusivo y dinámico. Diseñados para fomentar el intercambio de
+      conocimientos y experiencias, cada evento ofrece una oportunidad única de interactuar con líderes de la industria,
+      expertos en tecnología financiera y otras profesionales que comparten tu visión de transformar el sector.
+    </p>
+
+    <div class="mt-5">
+      <h3>¿Cómo se organizan?</h3>
+      <img src="img/event2.jpg" alt="Imagen sobre organización" class="section-img">
+      <ul>
+        <li>
+          <strong>Modalidad presencial:</strong> Nos enorgullece brindar una experiencia presencial en lugares
+          cuidadosamente seleccionados para promover la comodidad, la inspiración y la creatividad.
+        </li>
+        <li>
+          <strong>Duración del evento:</strong> Cada evento tiene una duración de entre 6 y 8 horas, con actividades
+          divididas en bloques para optimizar el tiempo de los asistentes.
+        </li>
+        <li>
+          <strong>Actividades principales:</strong>
+          <ul>
+            <li><strong>Conferencias y charlas inspiradoras:</strong> Dirigidas por ponentes destacados, estas sesiones
+              abordan temas como liderazgo femenino, innovación en fintech, inclusión digital y sostenibilidad.</li>
+            <li><strong>Talleres interactivos:</strong> Espacios prácticos diseñados para desarrollar habilidades clave
+              como programación, análisis de datos y estrategias de negocio.</li>
+            <li><strong>Paneles de discusión:</strong> Líderes de la industria debaten sobre las tendencias actuales y
+              los desafíos del sector fintech, brindando perspectivas valiosas.</li>
+            <li><strong>Networking:</strong> Los asistentes pueden intercambiar ideas, establecer conexiones
+              profesionales y explorar oportunidades de colaboración durante las sesiones de networking.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Ubicaciones:</strong> Hemos realizado eventos en las principales ciudades del país, como Lima, Cusco y
+          Arequipa, eligiendo puntos estratégicos que faciliten el acceso a nuestras participantes.
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-5">
+      <h3>¿Qué pueden esperar los asistentes?</h3>
+      <img src="img/event3.jpg" alt="Imagen sobre asistentes" class="section-img">
+      <ul>
+        <li><strong>Experiencia enriquecedora:</strong> Cada evento está diseñado para ser dinámico, atractivo y
+          educativo, asegurando que los asistentes se lleven ideas prácticas que puedan aplicar inmediatamente.</li>
+        <li><strong>Oportunidades de conexión:</strong> Construir una red de contactos es clave en el mundo fintech, y
+          estos eventos son el lugar perfecto para conocer mentores, potenciales colaboradores o incluso futuros socios
+          de negocio.</li>
+        <li><strong>Ambiente inclusivo:</strong> Nuestro objetivo es crear un espacio donde las mujeres se sientan
+          empoderadas y apoyadas para avanzar en sus carreras tecnológicas y financieras.</li>
+        <li><strong>Materiales exclusivos:</strong> Al finalizar el evento, los participantes reciben acceso a
+          presentaciones, recursos educativos y guías prácticas para continuar su aprendizaje.</li>
+      </ul>
+    </div>
+  </div>
+  <!--Eventos-->
+  <div class="container my-5">
+    <h3 class="text-center mb-4">Eventos Pasados</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <img src="/img/eventopasado1.jpeg" class="img-fluid rounded" alt="Evento 1">
+      </div>
+      <div class="col">
+        <img src="/img/eventopasado2.jpg" class="img-fluid rounded" alt="Evento 2">
+      </div>
+      <div class="col">
+        <img src="/img/eventopasado3.jpg" class="img-fluid rounded" alt="Evento 3">
+      </div>
+    </div>
+  </div>
+  <!--Eventos-->
+
+  <!--Footer -->
+  <div class="container">
+    <div class="container">
+      <footer style="border-top: 2px solid #120a0a; width: 100%;"
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <img src="img/logo.png" alt="Logo" width="30" height="24" />
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <img src="img/twitter.png" alt="Twitter" width="24" height="24" />
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <img src="img/instagram.png" alt="Instagram" width="24" height="24" />
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-body-secondary" href="#">
+              <img src="img/facebook.png" alt="Facebook" width="24" height="24" />
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+
+    <!--Footer terminado-->
+
+</body>
+
+</html>

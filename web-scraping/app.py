@@ -15,4 +15,11 @@ def home():
     page_title = soup.title.text  # Extraer el título de la página
 
     return render_template("form.html", page_title=page_title)
+\
+@app.route("/", methods=["POST"])
+def handle_form():
+    # Obtener datos enviados desde el formulario
+    user_input = request.form["page_title"]
+    
+    return f"El título enviado fue: {user_input}"
 

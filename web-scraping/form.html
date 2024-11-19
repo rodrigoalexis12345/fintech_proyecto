@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping desde HTML</title>
+</head>
+<body>
+    <h1>Web Scraping desde HTML</h1>
+    <label for="url">Ingresa la URL para hacer web scraping:</label>
+    <input type="text" id="url" placeholder="https://ejemplo.com" style="width: 300px; margin: 10px;">
+    <button id="scrapeBtn">Realizar Web Scraping</button>
+
+    <script>
+        async function webScraping() {
+            const url = document.getElementById('url').value;
+            
+            if (!url) {
+                alert('Por favor ingresa una URL válida.');
+                return;
+            }
+
+            try {
+                // Enviar solicitud a tu servidor intermedio
+                const response = await fetch(`http://localhost:3000/scrape?url=${encodeURIComponent(url)}`);
+                const data = await response.json();
+
+                if (data.parrafo) {
+                    // Mostrar el resultado
+                    alert(`El primer párrafo es: ${data.parrafo}`);
+                } else {
+                    alert('No se encontró contenido en la página.');
+                }
+            } catch (error) {
+                console.error('Error en el scraping:', error);
+                alert('Hubo un error al hacer scraping.');
+            }
+        }
+
+        document.getElementById('scrapeBtn').addEventListener('click', webScraping);
+    </script>
+</body>
+</html>

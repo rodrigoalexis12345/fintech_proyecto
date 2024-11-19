@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/LOGO.png" type="image/png" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #contactForm {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #contactForm .form-label {
+            font-weight: bold;
+        }
+
+        #contactForm .form-control,
+        #contactForm .form-select {
+            border-radius: 5px;
+        }
+
+        #contactForm button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contactForm button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contactanos</h1>
+    <form id="contactForm" method="POST">
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico"
+                required>
+        </div>
+
+        <!-- Tipo de Colaboración -->
+        <div class="mb-3">
+            <label for="tipoColaboracion" class="form-label">Tipo de Colaboración</label>
+            <select class="form-select" id="tipoColaboracion" name="tipoColaboracion" onchange="mostrarMotivo()"
+                required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="donacion">Donación</option>
+                <option value="voluntariado">Voluntariado</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+
+        <!-- Motivo -->
+        <div class="mb-3 d-none" id="motivoContainer">
+            <label for="motivo" class="form-label">Motivo</label>
+            <textarea class="form-control" id="motivo" name="motivo" rows="4"
+                placeholder="Describe tu motivo"></textarea>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"
+                required></textarea>
+        </div>
+
+        <!-- Botón -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Enviar registro</button>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const data = {
+                nombre: document.getElementById("nombre").value,
+                email: document.getElementById("email").value,
+                tipo_colaboracion: document.getElementById("tipoColaboracion").value,
+                motivo: document.getElementById("motivo").value || "",
+                mensaje: document.getElementById("mensaje").value,
+            };
+
+            try {
+                const response = await fetch("http://localhost:4000/colaboraciones", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    alert("Registro enviado con éxito");
+                    document.getElementById("contactForm").reset();
+                } else {
+                    alert("Error al enviar el registro");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("No se pudo enviar el registro");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

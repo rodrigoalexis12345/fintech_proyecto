@@ -8,73 +8,73 @@ const app = express();
 const PORT = 3000;
 
 // Ruta al archivo de noticias JSON y al HTML
-const newsFile = path.join(__dirname, 'newsData.json');
-const htmlFile = path.join(__dirname, 'public', 'noticias.html'); // Archivo de destino para los títulos e imágenes
+const newsFile = path.join(__dirname, 'newsData.json'); // Archivo JSON
+const htmlFile = path.join(__dirname, 'noticias.html'); // Archivo HTML en la misma carpeta que server.js
+
+// Base URL para construir enlaces completos
+const BASE_URL = 'https://gestion.pe';
 
 // Middleware para servir archivos estáticos
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Ruta principal para mostrar el HTML de noticias
 app.get('/', (req, res) => {
     res.sendFile(htmlFile);
 });
 
-// Función para realizar web scraping y reemplazar títulos e imágenes en `noticias.html`
+// Función para realizar web scraping y reemplazar datos en `noticias.html`
 async function scrapeAndReplaceInNoticias(url) {
     try {
         console.log(`Iniciando scraping de: ${url}`);
         const { data } = await axios.get(url);
         const $ = cheerio.load(data);
 
-        // Extraer títulos de las noticias
-        const titles = [];
+        // Extraer títulos, imágenes y URLs de las noticias
+        const newsData = [];
         $('.opinion-list__title a').each((i, el) => {
-            titles.push($(el).text().trim());
+            const title = $(el).text().trim();
+            const relativeLink = $(el).attr('href').trim(); // Capturar la URL relativa
+            const link = new URL(relativeLink, BASE_URL).href; // Construir URL completa
+            newsData.push({ title, link });
         });
 
-        // Extraer URLs de las imágenes relacionadas
-        const images = [];
         $('.opinion-list__img img').each((i, el) => {
-            images.push($(el).attr('src').trim());
+            if (newsData[i]) {
+                newsData[i].image = $(el).attr('src').trim(); // Asociar la imagen al título correspondiente
+            }
         });
 
-        if (!titles.length || !images.length) {
-            console.error('No se encontraron títulos o imágenes en la página.');
+        if (!newsData.length) {
+            console.error('No se encontraron datos de noticias en la página.');
             return;
         }
 
-        // Guardar los títulos e imágenes en un archivo JSON (opcional)
-        const newsData = titles.map((title, index) => ({
-            title,
-            image: images[index] || null, // Asocia título con imagen
-        }));
+        // Guardar los datos en un archivo JSON (opcional)
         fs.writeFileSync(newsFile, JSON.stringify(newsData, null, 2), 'utf-8');
-        console.log('Noticias e imágenes actualizadas correctamente.');
+        console.log('Noticias actualizadas correctamente.');
 
         // Leer el archivo HTML base
         let htmlContent = fs.readFileSync(htmlFile, 'utf-8');
         const $html = cheerio.load(htmlContent);
 
-        // Reemplazar títulos e imágenes en el contenedor de noticias
+        // Reemplazar títulos, imágenes y enlaces en el contenedor de noticias
         const listItems = $html('#news-list li');
         listItems.each((index, li) => {
-            const title = newsData[index]?.title;
-            const image = newsData[index]?.image;
-
-            if (title) {
-                $html(li).find('a').text(title); // Reemplaza el texto del título
-            }
-
-            if (image) {
-                $html(li).find('img').attr('src', image); // Reemplaza la URL de la imagen
+            const news = newsData[index];
+            if (news) {
+                $html(li).find('a').text(news.title); // Reemplazar el título
+                $html(li).find('a').attr('href', news.link); // Actualizar el enlace
+                if (news.image) {
+                    $html(li).find('img').attr('src', news.image); // Reemplazar la imagen
+                }
             }
         });
 
         // Guardar el HTML modificado
         fs.writeFileSync(htmlFile, $html.html(), 'utf-8');
-        console.log('Títulos e imágenes reemplazados correctamente en noticias.html.');
+        console.log('Títulos, imágenes y enlaces reemplazados correctamente en noticias.html.');
     } catch (error) {
-        console.error('Error al hacer scraping y reemplazar títulos e imágenes:', error.message);
+        console.error('Error al hacer scraping y reemplazar datos:', error.message);
     }
 }
 

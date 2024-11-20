@@ -1,8 +1,152 @@
 [
-  "El futuro del trabajo: IA, automatización y herramientas",
-  "El Perú entre la realidad y la fantasía",
-  "Giran los reflectores",
-  "“Como mono con metralleta”",
-  "Planeamiento temprano: Una forma de maximizar valor de una empresa",
-  "La inteligencia artificial y la Ley de Productividad y Competitividad Laboral"
+  {
+    "title": "Giran los reflectores",
+    "link": "https://gestion.pe/opinion/editorial/giran-los-reflectores-noticia/",
+    "image": "https://gestion.pe/resizer/v2/JGEEK4ZAKVFHXAS6YAYGNNOY4U.jfif?auth=21f445ec8eb8fce30636b8bd9941990dcbfb18751524af18f4005d830702ace0&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "“Como mono con metralleta”",
+    "link": "https://gestion.pe/opinion/como-mono-con-metralleta-noticia/",
+    "image": "https://gestion.pe/resizer/v2/A6MXQE47WREDXMWKQZRZFUHYII.jpg?auth=7227e07c7af25cfa6d771a5ca4958263ee0f14f6642ccd034a2b377c3b3f5f65&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Planeamiento temprano: Una forma de maximizar valor de una empresa",
+    "link": "https://gestion.pe/opinion/planeamiento-temprano-una-forma-de-maximizar-valor-de-una-empresa-noticia/",
+    "image": "https://gestion.pe/resizer/v2/KYVO3L4YIJD2BGDLEYICK255GI.jpg?auth=43302e01085dd8025579a08aa4d4f2c0d33c25353ff393330db4bb5ae15c1512&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "La inteligencia artificial y la Ley de Productividad y Competitividad Laboral",
+    "link": "https://gestion.pe/opinion/la-inteligencia-artificial-y-la-ley-de-productividad-y-competitividad-laboral-noticia/",
+    "image": "https://gestion.pe/resizer/v2/XQSPQA2BXFEBPAXMLCXJ4I3YDY.jpg?auth=3f2f15789929dda6d998684d0225c601914832f4fe1e4edb57d60778c7ea0533&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Prohibido fumar (y vapear) en el lugar de trabajo",
+    "link": "https://gestion.pe/opinion/prohibido-fumar-y-vapear-en-el-lugar-de-trabajo-noticia/",
+    "image": "https://gestion.pe/resizer/v2/BZEE2MGVZ5GLFCSWX2XU7PZ3MQ.png?auth=5646f7c095ef4c76c4757371f4bd334903cfc079ad5a50b7ccb325ffe4746ab4&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "¿Quieres ser director independiente en una empresa familiar?",
+    "link": "https://gestion.pe/opinion/quieres-ser-director-independiente-en-una-empresa-familiar-noticia/",
+    "image": "https://gestion.pe/resizer/v2/WSSPSA7T6FAE5JRNBD5L6BZNPA.jpg?auth=a4f1bf4a716d4a4372a11a5d1a57fd8f29e1847e2c3a25ba0ddc6df01d2c9190&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El APEC y la Educación",
+    "link": "https://gestion.pe/opinion/el-apec-y-la-educacion-noticia/",
+    "image": "https://gestion.pe/resizer/v2/2XWOKRUKKJAVVI23I2GBC7DWW4.jpeg?auth=ac5af31f21295114673a4c49e7445b6aefc38011e83cb5412f4141bf587e97a9&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "“Se requieren políticas que desregulen el mercado laboral”",
+    "link": "https://gestion.pe/opinion/se-requieren-politicas-que-desregulen-el-mercado-laboral-noticia/",
+    "image": "https://gestion.pe/resizer/v2/JRBCDKHYHZCAHNVIZUDSSSV65E.jpg?auth=f20257f27c8ead45e918db91629bef8f33200268c1ba17ddf89c4d80229a4087&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Gastos relacionados a dividendos",
+    "link": "https://gestion.pe/opinion/francisco-pantigoso-gastos-relacionados-a-dividendos-noticia/",
+    "image": "https://gestion.pe/resizer/v2/TENN7A6UUVFL5OJWHKGHKGVEY4.jpg?auth=5b841654dc40b49eb57288fb91065a68eb2576ea8e2c0ef5fd5a2022dad14918&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El MEF: un ministerio en sombras",
+    "link": "https://gestion.pe/opinion/el-mef-un-ministerio-en-sombras-noticia/",
+    "image": "https://gestion.pe/resizer/v2/SDUA6EQHGVB4VI5JAGWMC74X7E.jpg?auth=c4c4895e2aa1cd5f2ed3126d7ebc57584b170b16b4c54759ec9d5508cd776ee2&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Todavía no despega",
+    "link": "https://gestion.pe/opinion/editorial/mef-pbi-empleo-todavia-no-despega-noticia/",
+    "image": "https://gestion.pe/resizer/v2/LP6UORMZLZCRLA5PJJX6JSPIE4.jpg?auth=2bc4129a7235b5be97641a5abda7bc08317cfb3ef0bae168a7fc1659217aa980&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Alta dirección: El tiempo no cura nada, lo agrava",
+    "link": "https://gestion.pe/opinion/alta-direccion-el-tiempo-no-cura-nada-lo-agrava-noticia/",
+    "image": "https://gestion.pe/resizer/v2/563TB7Z2I5C5POJVIQIMXUYMFM.jpg?auth=ae4a158dfec8b79078d9eec2bf2fc0ab69166f60af967e53fb52d98ee07651d8&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Para combatir la informalidad, primero hay que entenderla",
+    "link": "https://gestion.pe/opinion/para-combatir-la-informalidad-primero-hay-que-entenderla-noticia/",
+    "image": "https://gestion.pe/resizer/v2/LLYGGJ4KDVGMPFHNRRG42Y7YJ4.jpg?auth=c02b5442407f5ee12b3e2bc0d5fb76862d3fbb195f92bc5a8045c3a0af8a6989&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Institucionalizar para atraer",
+    "link": "https://gestion.pe/opinion/editorial/institucionalizar-para-atraer-noticia/",
+    "image": "https://gestion.pe/resizer/v2/N4SXX33VHRGMRFSNAER6RCCUW4.jpg?auth=4782eb1963a8e1cc944c45861e7ed491f4d043474ea2b2232a8d66118c1d8995&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "APEC 2024: Un Perú distinto",
+    "link": "https://gestion.pe/opinion/editorial/apec-2024-un-peru-distinto-noticia/",
+    "image": "https://gestion.pe/resizer/v2/BTINX3F3AFBFHB6PUCBHXXR6E4.jpg?auth=d504dc524c4f5b043b244e32c371750a7bf76daf56a20005ec80c86974118e3c&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El Perú y el APEC",
+    "link": "https://gestion.pe/opinion/el-peru-y-el-apec-noticia/",
+    "image": "https://gestion.pe/resizer/v2/GQYTCMZNGEYS2MJUKQ2DAORUGE.jpg?auth=ae9c71872bc1bcbd2a21a10ac86f003f415483318d596a5a2b1a558a3c70783a&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Adaptación a un clima cambiante en la agenda empresarial",
+    "link": "https://gestion.pe/opinion/adaptacion-a-un-clima-cambiante-en-la-agenda-empresarial-noticia/",
+    "image": "https://gestion.pe/resizer/v2/N6JZCAEBUFGGVLWABKR4FEU2ZA.jpg?auth=e55f1394d56ed0c482ed105fd47239f3f8b2674531ed72404fd3360b2b3deeee&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "APEC, inclusión financiera y ciberseguridad",
+    "link": "https://gestion.pe/opinion/apec-inclusion-financiera-y-ciberseguridad-noticia/",
+    "image": "https://gestion.pe/resizer/v2/FLOKRXFQVFGK3C2GSVX2ZHDNEM.jpg?auth=45caf196ac45e85045649eeea9890664266b26a0f6f54732986cf4dbc6dd2fba&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Perspectivas vs. realidad",
+    "link": "https://gestion.pe/opinion/editorial/perspectivas-vs-realidad-noticia/",
+    "image": "https://gestion.pe/resizer/v2/4AWADVDVLJAT7NK4ENV3VX2SEY.jpg?auth=835b019e56861a8dcb8a7264c961108b58ed6ffa90042db96aa74a2ece1b0d4a&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "APEC: la agenda relacionada con el empleo",
+    "link": "https://gestion.pe/opinion/apec-la-agenda-relacionada-con-el-empleo-noticia/",
+    "image": "https://gestion.pe/resizer/v2/PZVE5I2AKBCVLMQ54VUXAKEDQU.jpg?auth=18602e951991d5c540b168589b0d097e1dc6e6ba7710b724445ebf1421f48df9&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Puerto de Chancay: China ha hecho una apuesta que busca revolucionar el comercio exterior",
+    "link": "https://gestion.pe/opinion/puerto-de-chancay-china-ha-hecho-una-apuesta-que-busca-revolucionar-el-comercio-exterior-noticia/",
+    "image": "https://gestion.pe/resizer/v2/WXO67TLUV5EETGMP4BID2522DI.jpeg?auth=cd31f45046440f02fa4d0fba3dbd05170a42ec52a3df918f2934c217aac4dcba&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El desafío de recuperar la confianza",
+    "link": "https://gestion.pe/opinion/el-desafio-de-recuperar-la-confianza-noticia/",
+    "image": "https://gestion.pe/resizer/v2/GQXLMBU23VFNFJZQFGTV26M4BY.jpg?auth=924124a349a400286139b07cfaf24558f431a06a255141e5f779acb015e504c7&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Ajustes al drawback: un momento clave para desarrollar el “subsidio” de forma adecuada",
+    "link": "https://gestion.pe/opinion/ajustes-al-drawback-un-momento-clave-para-desarrollar-el-subsidio-de-forma-adecuada-noticia/",
+    "image": "https://gestion.pe/resizer/v2/MW2Q6ENHLRHPJPMVIK3YPUFUQ4.jpg?auth=00665b6ef145a005f6f516c16db879fd5ba4da04ab2ae401785dbfb209ccc162&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El “hub” en Chancay, una gran oportunidad de desarrollo",
+    "link": "https://gestion.pe/opinion/puerto-de-chancay-megapuerto-el-hub-en-chancay-una-gran-oportunidad-de-desarrollo-noticia/",
+    "image": "https://gestion.pe/resizer/v2/RVZGHZDGGJEPPAMXHTVGVWZWTM.jpeg?auth=9a6a2360adb44dc85129084407f33d49fcc8a8fc4c98afc7fa8ce49ab51c71e2&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Editorial de Gestión:Fuegos artificiales",
+    "link": "https://gestion.pe/opinion/editorial/editorial-de-gestionfuegos-artificiales-congreso-inseguridad-noticia/",
+    "image": "https://gestion.pe/resizer/v2/4CK5A3KVKBGZHH7VPC3DERJPVI.jpg?auth=28cdc5f5832e88e8335b6ccf760855eed36a814971e211e929e196cf45d3567a&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Vidas interrumpidas: embarazo infantil",
+    "link": "https://gestion.pe/opinion/vidas-interrumpidas-embarazo-infantil-por-marilu-martens-noticia/",
+    "image": "https://gestion.pe/resizer/v2/IZQZIZSTS5AJHHDKDGBKW4BCCY.jpg?auth=b1ce2a89e21439be43eac22c191c3354d59b150130abfc0df83ca522f8dbb20a&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "El capitán Paiva",
+    "link": "https://gestion.pe/opinion/el-capitan-paiva-por-martin-naranjo-noticia/",
+    "image": "https://gestion.pe/resizer/v2/TJT2PI36YVH2XCQVTZTD5WSAOI.jpg?auth=2623430c9b77e676ca4291ed7457bcaf5c00164b5739482bf2fc13094bf9bd26&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "Los retos del director independiente, ¿cómo suavizar el camino?",
+    "link": "https://gestion.pe/opinion/los-retos-del-director-independiente-como-suavizar-el-camino-por-katherine-downs-directora-independiente-miembro-de-wcd-noticia/",
+    "image": "https://gestion.pe/resizer/v2/TTM2XFFBYVDL5EMZ2N32EIOGSU.jpg?auth=67f0709d9a7601a4bbbc9c89adabdfd53d6d2bf7610da16240bb566c85f6523e&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "¿Es indispensable la “fecha cierta”?",
+    "link": "https://gestion.pe/opinion/francisco-pantigoso-es-indispensable-la-fecha-cierta-impuestos-sunat-tribunal-fiscal-noticia/",
+    "image": "https://gestion.pe/resizer/v2/M4YXA6CNSBH2BBZ5YEDWQ4WSSA.jpg?auth=936317e5cea572d27859d8445eff61f0ea7a6f81eba55ca1df0418a1360e2359&width=234&height=161&quality=75&smart=true"
+  },
+  {
+    "title": "PPK: Retos al liberalismo económico internacional",
+    "link": "https://gestion.pe/opinion/pkk-retos-al-liberalismo-economico-internacional-por-pedro-pablo-kuczynski-noticia/",
+    "image": "https://gestion.pe/resizer/v2/NLFAAYAOGFFA3OX5WW4D5GZZUY.jpeg?auth=2af2b6647ff943a407dcf2a216aea1c74eb077dd959570d91dc4a1fa6f9135b9&width=234&height=161&quality=75&smart=true"
+  }
 ]

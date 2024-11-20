@@ -9,49 +9,72 @@ const PORT = 3000;
 
 // Ruta al archivo de noticias JSON y al HTML
 const newsFile = path.join(__dirname, 'newsData.json');
-const htmlFile = path.join(__dirname, 'public', 'index.html');
+const htmlFile = path.join(__dirname, 'public', 'noticias.html'); // Archivo de destino para los títulos e imágenes
 
 // Middleware para servir archivos estáticos
 app.use(express.static('public'));
 
-// Ruta principal para mostrar el HTML
+// Ruta principal para mostrar el HTML de noticias
 app.get('/', (req, res) => {
     res.sendFile(htmlFile);
 });
 
-// Función para realizar web scraping y reemplazar títulos automáticamente
-async function scrapeAndReplace(url) {
+// Función para realizar web scraping y reemplazar títulos e imágenes en `noticias.html`
+async function scrapeAndReplaceInNoticias(url) {
     try {
         console.log(`Iniciando scraping de: ${url}`);
         const { data } = await axios.get(url);
         const $ = cheerio.load(data);
 
+        // Extraer títulos de las noticias
         const titles = [];
-        $('h3.opinion-card__news-title').each((i, el) => {
+        $('.opinion-list__title a').each((i, el) => {
             titles.push($(el).text().trim());
         });
 
-        if (!titles.length) {
-            console.error('No se encontraron títulos en la página.');
+        // Extraer URLs de las imágenes relacionadas
+        const images = [];
+        $('.opinion-list__img img').each((i, el) => {
+            images.push($(el).attr('src').trim());
+        });
+
+        if (!titles.length || !images.length) {
+            console.error('No se encontraron títulos o imágenes en la página.');
             return;
         }
 
-        // Guardar los títulos en un archivo JSON
-        fs.writeFileSync(newsFile, JSON.stringify(titles, null, 2), 'utf-8');
-        console.log('Noticias actualizadas correctamente.');
+        // Guardar los títulos e imágenes en un archivo JSON (opcional)
+        const newsData = titles.map((title, index) => ({
+            title,
+            image: images[index] || null, // Asocia título con imagen
+        }));
+        fs.writeFileSync(newsFile, JSON.stringify(newsData, null, 2), 'utf-8');
+        console.log('Noticias e imágenes actualizadas correctamente.');
 
-        // Leer y modificar el HTML original con los nuevos títulos
+        // Leer el archivo HTML base
         let htmlContent = fs.readFileSync(htmlFile, 'utf-8');
-        titles.forEach((title, index) => {
-            const placeholder = `{{title${index + 1}}}`;
-            htmlContent = htmlContent.replace(placeholder, title);
+        const $html = cheerio.load(htmlContent);
+
+        // Reemplazar títulos e imágenes en el contenedor de noticias
+        const listItems = $html('#news-list li');
+        listItems.each((index, li) => {
+            const title = newsData[index]?.title;
+            const image = newsData[index]?.image;
+
+            if (title) {
+                $html(li).find('a').text(title); // Reemplaza el texto del título
+            }
+
+            if (image) {
+                $html(li).find('img').attr('src', image); // Reemplaza la URL de la imagen
+            }
         });
 
-        // Sobrescribir el archivo HTML original
-        fs.writeFileSync(htmlFile, htmlContent, 'utf-8');
-        console.log('Títulos reemplazados automáticamente en el archivo HTML.');
+        // Guardar el HTML modificado
+        fs.writeFileSync(htmlFile, $html.html(), 'utf-8');
+        console.log('Títulos e imágenes reemplazados correctamente en noticias.html.');
     } catch (error) {
-        console.error('Error al hacer scraping y reemplazar títulos:', error.message);
+        console.error('Error al hacer scraping y reemplazar títulos e imágenes:', error.message);
     }
 }
 
@@ -59,11 +82,11 @@ async function scrapeAndReplace(url) {
 const url = 'https://gestion.pe/opinion/?ref=gesr';
 
 // Ejecutar el scraping y reemplazo al iniciar el servidor
-scrapeAndReplace(url);
+scrapeAndReplaceInNoticias(url);
 
 // Programar el scraping y reemplazo cada 24 horas
 setInterval(() => {
-    scrapeAndReplace(url);
+    scrapeAndReplaceInNoticias(url);
 }, 24 * 60 * 60 * 1000); // Cada 24 horas
 
 // Iniciar el servidor

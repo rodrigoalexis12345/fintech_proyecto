@@ -118,62 +118,98 @@
     </div>
   </header>
 
-  <!-- Contenedor del Carrusel -->
-  <div class="carousel-container">
-    <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Primer elemento del carrusel -->
-        <div class="carousel-item active">
-          <div class="position-relative">
-            <img src="img/Eventos-calendario1.jpg" class="d-block custom-carousel-img" alt="Evento 1">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-              <h5 class="bg-dark text-white p-2 rounded">Evento de Innovación en Fintech</h5>
-              <p class="bg-dark text-white p-2 rounded">Fecha: 20 de Noviembre | Ubicación: Lima, Perú</p>
-              <a href="#" class="btn btn-primary">Registrarse</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Segundo elemento del carrusel -->
-        <div class="carousel-item">
-          <div class="position-relative">
-            <img src="img/Eventos-calendario2.jpg" class="d-block custom-carousel-img" alt="Evento 2">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-              <h5 class="bg-dark text-white p-2 rounded">Taller de Blockchain y Criptomonedas</h5>
-              <p class="bg-dark text-white p-2 rounded">Fecha: 5 de Diciembre | Ubicación: Arequipa, Perú</p>
-              <a href="#" class="btn btn-primary">Registrarse</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tercer elemento del carrusel -->
-        <div class="carousel-item">
-          <div class="position-relative">
-            <img src="img/Eventos-calendario3.jpg" class="d-block custom-carousel-img" alt="Evento 3">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-              <h5 class="bg-dark text-white p-2 rounded">Networking para Mujeres en Fintech</h5>
-              <p class="bg-dark text-white p-2 rounded">Fecha: 15 de Enero | Ubicación: Cusco, Perú</p>
-              <a href="#" class="btn btn-primary">Registrarse</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Controles del carrusel -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-    </div>
+  <!-- Carrusel API -->
+  <div id="eventosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner" id="carouselContent"></div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#eventosCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#eventosCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
   </div>
+
+
+  <!-- Estilos -->
+  <style>
+    /* Contenedor del carrusel */
+    .carousel-inner {
+      width: 100%;
+      /* Ancho completo */
+      height: 330px;
+      /* Altura fija para el carrusel */
+    }
+
+    /* Cada item del carrusel */
+    .carousel-item {
+      height: 100%;
+      /* Ocupa todo el contenedor */
+    }
+
+    /* Ajuste de las imágenes */
+    .carousel-item img {
+      width: 100%;
+      /* Ancho completo */
+      height: 100%;
+      /* Altura completa del contenedor */
+      object-fit: cover;
+      /* Ajusta la imagen sin distorsionarla */
+      display: block;
+      /* Evita espacios blancos alrededor */
+    }
+
+    /* Estilo de los textos */
+    h5 {
+      color: #7EC8E3;
+      /* Azul pastel */
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    p {
+      color: #a3ce16;
+      /* Verde menta */
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Ajustes responsivos */
+    @media (max-width: 768px) {
+      .carousel-inner {
+        height: 200px;
+        /* Altura más pequeña en dispositivos móviles */
+      }
+
+      .carousel-item img {
+        height: 200px;
+        /* Ajusta las imágenes también */
+      }
+    }
+  </style>
+  <!-- Scripts -->
+  <script>
+    // Inicialización del carrusel
+    var carousel = new bootstrap.Carousel('#eventosCarousel', {
+      interval: 5000, // Cambia cada 5 segundos
+      wrap: true // Hace que vuelva al inicio después del último elemento
+    });
+  </script>
+
+  <!--Carrusel api-->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+
   <!-- Fin del Carrusel -->
 
   <!-- CSS personalizado para el carrusel -->
   <style>
+    
     .carousel-container {
       width: 100%;
       /* Reduce el ancho del carrusel al 80% */
@@ -186,6 +222,7 @@
       height: 100%;
       object-fit: fixed;
 
+
       /* Asegura que la imagen salga completa en el contenedor */
       max-height: 450px;
       /* Controla la altura máxima del carrusel */
@@ -196,7 +233,9 @@
       /* Fondo semitransparente para mejorar la legibilidad */
     }
 
+
     .carousel-inner .carousel-item {
+
       transition: transform 1s ease;
       /* Transición suave */
     }
@@ -209,10 +248,11 @@
   <div class="container my-5">
     <h2 class="text-center mb-4">Sobre nuestros eventos</h2>
     <img src="img/event1.jpeg" alt="Imagen sobre eventos" class="section-img">
-    <p class="text-center">
+    <p class="text-center" style="color: #120a0a;">
       Nuestros eventos de <strong>Networking para Mujeres en Fintech</strong> son el espacio ideal para conectar,
       aprender y crecer profesionalmente en un entorno inclusivo y dinámico. Diseñados para fomentar el intercambio de
-      conocimientos y experiencias, cada evento ofrece una oportunidad única de interactuar con líderes de la industria,
+      conocimientos y experiencias, cada evento ofrece una oportunidad única de interactuar con líderes de la
+      industria,
       expertos en tecnología financiera y otras profesionales que comparten tu visión de transformar el sector.
     </p>
 
@@ -231,9 +271,11 @@
         <li>
           <strong>Actividades principales:</strong>
           <ul>
-            <li><strong>Conferencias y charlas inspiradoras:</strong> Dirigidas por ponentes destacados, estas sesiones
+            <li><strong>Conferencias y charlas inspiradoras:</strong> Dirigidas por ponentes destacados, estas
+              sesiones
               abordan temas como liderazgo femenino, innovación en fintech, inclusión digital y sostenibilidad.</li>
-            <li><strong>Talleres interactivos:</strong> Espacios prácticos diseñados para desarrollar habilidades clave
+            <li><strong>Talleres interactivos:</strong> Espacios prácticos diseñados para desarrollar habilidades
+              clave
               como programación, análisis de datos y estrategias de negocio.</li>
             <li><strong>Paneles de discusión:</strong> Líderes de la industria debaten sobre las tendencias actuales y
               los desafíos del sector fintech, brindando perspectivas valiosas.</li>
@@ -242,7 +284,8 @@
           </ul>
         </li>
         <li>
-          <strong>Ubicaciones:</strong> Hemos realizado eventos en las principales ciudades del país, como Lima, Cusco y
+          <strong>Ubicaciones:</strong> Hemos realizado eventos en las principales ciudades del país, como Lima, Cusco
+          y
           Arequipa, eligiendo puntos estratégicos que faciliten el acceso a nuestras participantes.
         </li>
       </ul>
@@ -255,7 +298,8 @@
         <li><strong>Experiencia enriquecedora:</strong> Cada evento está diseñado para ser dinámico, atractivo y
           educativo, asegurando que los asistentes se lleven ideas prácticas que puedan aplicar inmediatamente.</li>
         <li><strong>Oportunidades de conexión:</strong> Construir una red de contactos es clave en el mundo fintech, y
-          estos eventos son el lugar perfecto para conocer mentores, potenciales colaboradores o incluso futuros socios
+          estos eventos son el lugar perfecto para conocer mentores, potenciales colaboradores o incluso futuros
+          socios
           de negocio.</li>
         <li><strong>Ambiente inclusivo:</strong> Nuestro objetivo es crear un espacio donde las mujeres se sientan
           empoderadas y apoyadas para avanzar en sus carreras tecnológicas y financieras.</li>
